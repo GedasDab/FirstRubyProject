@@ -1,0 +1,37 @@
+inherit_gem:
+  rubocop-vinted:
+    - .rubocop.default.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  DisplayCopNames: true
+  Exclude:
+    - db/**/*
+
+Layout/LineLength:
+  Max: 99
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*_spec.rb"
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Rails/InverseOf:
+  Enabled: false

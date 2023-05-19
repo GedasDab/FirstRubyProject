@@ -30,6 +30,17 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
+gem 'interactor-initializer' # to be used for writing interactors
+gem 'kaminari' # for pagination
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails' # we skipped default testing framework for rails with -T and using rspec instead
+  gem 'pry' # use binding.pry to stop execution and open console session for debugging
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-vinted', require: false
+end
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
