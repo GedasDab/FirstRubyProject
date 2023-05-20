@@ -6,7 +6,9 @@ class ItemsController < ApplicationController
   rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
-    render json: Item.all
+    items = Item.page(params[:page])
+
+    render json: items, meta: pagination(items), adapter: :json
   end
 
   def show
